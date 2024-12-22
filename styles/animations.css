@@ -10,80 +10,83 @@
 
 */
 
+.like-icon {
+  transform-origin: center;
+}
+
 .core {
-    fill: transparent;
-    transition: 0.2s 0.04s;
+  fill: transparent;
+  transition: 0.3s 0.04s;
+}
+.card__icon-button:hover .core {
+  fill: #000;
+  transition: 0.3s 0.03s;
+}
+
+.card__icon-button:active .core {
+  fill: #f00;
+  transition: 0.3s;
+}
+
+.like-icon.is-liked .core {
+  fill: #f00;
+  transition: 0.3s 0.2s;
+}
+
+.main-body {
+  fill: transparent;
+  transition: 0.5s;
+}
+
+.card__icon-button:hover .main-body {
+  fill: #000;
+  transition: 0.3s 0.05s;
+}
+
+.card__icon-button:active .main-body {
+  fill: #f00;
+  transition: 0.4s 0.05s;
+}
+
+.like-icon.is-liked .main-body {
+  fill: #f00;
+  transition: 0.3s 0.3s;
+}
+
+.contour {
+  fill: #000;
+  transition: 0.1s linear;
+}
+
+.like-icon.is-liked .contour {
+  fill: #f00;
+  transition: 0.3s 0.35s;
+}
+
+.like-icon.is-liked .heart {
+  animation: heart-scale 0.3s 0.1s ease-in;
+}
+
+.like-icon.is-liked .sparks {
+  animation: heart-sparks 0.3s 0.3s ease-in;
+}
+
+@keyframes heart-scale {
+  50% {
+      scale: 1.25;
   }
-  .card__icon-button:hover .core {
-    fill: #000;
-    transition: 0.4s;
-  }
-  
-  .card__icon-button:active .core {
-    fill: #f00;
-    transition: 0.4s;
-  }
-  
-  .like-icon.is-liked .core {
-    fill: #f00;
-    transition: 0.4s;
-  }
-  
-  .main-body {
-    fill: transparent;
-    transition: 0.4s;
-  }
-  
-  .card__icon-button:hover .main-body {
-    fill: #000;
-    transition: 0.2s 0.05s;
-  }
-    
-  .card__icon-button:active .main-body {
-    fill: #f00;
-    transition: 0.2s 0.05s;
-  }
-    
-  .like-icon.is-liked .main-body {
-    fill: #f00;
-    transition: 0.4s 0.05s;
-  }
-  
-  .contour {
-    fill: #000;
-    transition: 0.2s linear;
-  }
-  
-  .like-icon.is-liked .contour {
-    fill: #f00;
-    transition: 0.5s 0.06s;
-  }
-    
-  .like-icon.is-liked .heart {
-    animation: heart-scale 0.4s 0.1s ease-in;
-  }
-    
-  .like-icon.is-liked .sparks {
-    animation: heart-sparks 0.3s 0.3s ease-in;
-  }
-    
-    @keyframes heart-scale {
-   50% {
-     scale: 1.15;
-     translate: -12.5% -12.5%;
-    }
-  
-    to {
+
+  to {
       scale: 1;
-    }
   }
-    
-    @keyframes heart-sparks {
-    50% {
+}
+
+@keyframes heart-sparks {
+  50% {
       opacity: 1;
-    }
-  
-    to {
-      opacity: 0;
-    }
   }
+
+  to {
+      opacity: 0;
+  }
+}
