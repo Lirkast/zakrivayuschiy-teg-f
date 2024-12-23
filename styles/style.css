@@ -70,8 +70,8 @@
   outline: var(--line);
 }
 
-.description__tex {
-  line-height: 21px;
+.description__text {
+  line-height: 1.17;
 }
 
 .description__text:not(:first-of-type) {
@@ -82,7 +82,7 @@
   padding:25px 25.5px 25px 25px;
 
   @media (width <= 376px) {
-    padding: 22px 26px 25px 25px;
+    padding: 25px 26px 25px 25px;
   }
 }
 
@@ -114,13 +114,18 @@
   opacity: 0.5;
   text-shadow: 0 -1px #fff, 1px 0 #fff, 0 1px #fff, -1px 0 #fff;
   inset-block-start: 25px;
-  inset-inline-end: 13px;
+  inset-inline-end: 25px;
   mix-blend-mode: hard-light;
 
   @supports ((text-stroke: 1px #fff) or (-webkit-text-stroke: 1px #fff)) {
     text-stroke: 1px #fff;
     -webkit-text-stroke: 1px #fff;
     text-shadow: none;
+  };
+
+  @media (width <= 376px) {
+    inset-block-start: 23px;
+    inset-inline-end: 12px;
   }
 }
 
@@ -246,6 +251,10 @@
   inline-size: 21px;
   z-index: 2;
   mix-blend-mode: difference;
+
+  @media (width <= 376px) {
+    inline-size: 28px;
+  }
 }
 
 dialog::backdrop {
@@ -282,7 +291,7 @@ dialog[open] {
   inline-size: clamp(21.313rem, 20.96rem + 1.502vw, 22.313rem);
   
   @media (width <= 376px) {
-    padding: 30px 42px;
+    padding: 30px 40px;
   }
 } 
 
